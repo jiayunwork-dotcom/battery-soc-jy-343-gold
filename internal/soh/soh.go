@@ -11,7 +11,7 @@ import (
 // SOH returns capacity health as currentCap/initialCap, clamped to [0,1].
 // It returns an error if initialCap <= 0.
 func SOH(initialCap, currentCap float64) (float64, error) {
-	if initialCap < 0 {
+	if initialCap <= 0 {
 		return 0, errors.New("initialCap must be positive")
 	}
 	ratio := currentCap / initialCap
